@@ -1,18 +1,21 @@
 from functools import wraps
 from time import time
 
+
 def allows_only(valid_keys):
     """
 
     :param valid_keys: query params we will not remove
     :return: decorated decorator
     """
+
     @wraps(valid_keys)
     def allows_only_decorator(fn):
         """
         :param fn: function to decorate
         :return:  decorated function
         """
+
         @wraps(fn)
         def wrap_func(*args, **kwargs):
             """
@@ -34,7 +37,6 @@ def allows_only(valid_keys):
         return wrap_func
 
     return allows_only_decorator
-
 
 
 def timing(f):

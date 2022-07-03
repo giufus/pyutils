@@ -2,11 +2,8 @@ from unittest import TestCase
 import decorators
 
 
-
-
 class Test(TestCase):
     def test_allows_only(self):
-
         # given
         _actual = {
             'queryStringParameters': {
